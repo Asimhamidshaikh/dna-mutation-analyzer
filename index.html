@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genomic Mutation & Variant Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🧬 Genomic Mutation & Variant Analyzer</h1>
+    <p>Bioinformatics tool for DNA transcription, translation, and point-mutation analysis</p>
+  </header>
+
+  <main class="container">
+    <div class="preset-section">
+      <label for="presetSelect"><strong>Load Clinical Case Preset:</strong></label>
+      <select id="presetSelect">
+        <option value="custom">Custom Sequence</option>
+        <option value="sickleCell">Sickle Cell Anemia (HBB Gene Mutation)</option>
+      </select>
+    </div>
+
+    <div class="input-grid">
+      <div class="input-box">
+        <label for="wildDNA">Wild-Type (Normal) DNA Sequence:</label>
+        <textarea id="wildDNA" placeholder="e.g. ATG GTG CAC CTG ACT CCT GAG GAG">ATG GTG CAC CTG ACT CCT GAG GAG</textarea>
+      </div>
+      <div class="input-box">
+        <label for="mutantDNA">Patient (Mutant) DNA Sequence:</label>
+        <textarea id="mutantDNA" placeholder="e.g. ATG GTG CAC CTG ACT CCT GTG GAG">ATG GTG CAC CTG ACT CCT GTG GAG</textarea>
+      </div>
+    </div>
+
+    <button id="analyzeBtn">Run Genomic Analysis ➔</button>
+
+    <div id="resultsCard" class="card hidden">
+      <h2>Analysis Results</h2>
+      
+      <div class="result-group">
+        <h3>Normal (Wild-Type) Sequence</h3>
+        <p><strong>mRNA:</strong> <span id="wildmRNA"></span></p>
+        <p><strong>Amino Acid Chain:</strong> <span id="wildProtein"></span></p>
+      </div>
+
+      <div class="result-group">
+        <h3>Patient Sequence</h3>
+        <p><strong>mRNA:</strong> <span id="mutantmRNA"></span></p>
+        <p><strong>Amino Acid Chain:</strong> <span id="mutantProtein"></span></p>
+      </div>
+
+      <div id="mutationNotice" class="alert-box"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
